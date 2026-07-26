@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Разработка Telegram-ботов | Эдуард</title>
+    <style>
+        /* ===== ОБНУЛЕНИЕ ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0b0b0e;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px 24px;
+        }
+
+        /* ===== ШАПКА ===== */
+        header {
+            text-align: center;
+            padding: 70px 0 50px;
+        }
+
+        header .badge {
+            display: inline-block;
+            background: rgba(123, 47, 252, 0.2);
+            color: #a855f7;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(123, 47, 252, 0.3);
+        }
+
+        header h1 {
+            font-size: 52px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #7b2ffc, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #a0a0a0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #7b2ffc, #a855f7);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(123, 47, 252, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(123, 47, 252, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #444;
+        }
+
+        .btn-secondary:hover {
+            border-color: #7b2ffc;
+            background: rgba(123, 47, 252, 0.1);
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        .section {
+            padding: 60px 0;
+            border-top: 1px solid #1a1a1e;
+        }
+
+        .section-title {
+            font-size: 34px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #888;
+            font-size: 17px;
+            margin-bottom: 40px;
+        }
+
+        /* ===== КАРТОЧКИ УСЛУГ ===== */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #141418;
+            padding: 32px 24px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #7b2ffc;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .card .emoji {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .card p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 14px;
+        }
+
+        .card ul li {
+            padding: 6px 0;
+            color: #bbb;
+            font-size: 14px;
+            border-bottom: 1px solid #1e1e22;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        .price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin: 16px 0 6px;
+        }
+
+        .price small {
+            font-size: 15px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        /* ===== СКРИНШОТЫ ===== */
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshots-grid img {
+            width: 100%;
+            border-radius: 16px;
+            border: 1px solid #2a2a2e;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshots-grid img:hover {
+            transform: scale(1.02);
+            border-color: #7b2ffc;
+        }
+
+        /* ===== ВИДЕО ===== */
+        .video-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #2a2a2e;
+            background: #000;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            display: block;
+        }
+
+        .video-caption {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            margin-top: 12px;
+        }
+
+        /* ===== КОНТАКТЫ ===== */
+        .contact-box {
+            background: linear-gradient(135deg, #141418, #1a0a2e);
+            border-radius: 24px;
+            padding: 50px 30px;
+            text-align: center;
+            border: 1px solid #2a1a3e;
+        }
+
+        .contact-box h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #aaa;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        /* ===== ПОДВАЛ ===== */
+        footer {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-top: 1px solid #1a1a1e;
+            color: #555;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #a855f7;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header p {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                padding: 30px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===== ШАПКА ===== -->
+        <header>
+            <div class="badge">🚀 Разработка Telegram-ботов</div>
+            <h1>Автоматизируй бизнес<br>с умным ботом</h1>
+            <p>Приём заказов, уведомления, админ-панель — всё в одном Telegram-боте</p>
+            <div class="btn-group">
+                <a href="https://t.me/eduardburin" class="btn btn-primary">💬 Связаться со мной</a>
+                <a href="#demo" class="btn btn-secondary">🎬 Смотреть демо</a>
+            </div>
+        </header>
+
+        <!-- ===== УСЛУГИ ===== -->
+        <section class="section">
+            <h2 class="section-title">Что я делаю</h2>
+            <p class="section-sub">Готовые решения для вашего бизнеса</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <span class="emoji">🤖</span>
+                    <h3>Бот под ключ</h3>
+                    <p>Полноценный бот с приёмом заказов, базой данных и уведомлениями</p>
+                    <ul>
+                        <li>✅ Приём заказов 24/7</li>
+                        <li>✅ Уведомления админу</li>
+                        <li>✅ Готовая админ-панель</li>
+                    </ul>
+                    <div class="price">от 30 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <span class="emoji">⚡</span>
+                    <h3>Бизнес-бот</h3>
+                    <p>Расширенная версия с аналитикой, рассылками и интеграциями</p>
+                    <ul>
+                        <li>✅ Статистика и графики</li>
+                        <li>✅ Рассылки клиентам</li>
+                        <li>✅ Интеграция с CRM</li>
+                    </ul>
+                    <div class="price">от 70 000 ₽</div>
+                </div>
+
+                <div class="card">
+                    <span class="emoji">👑</span>
+                    <h3>Индивидуальный</h3>
+                    <p>Всё, что нужно именно вам — любая логика и интеграции</p>
+                    <ul>
+                        <li>✅ Любая сложность</li>
+                        <li>✅ Интеграции с API</li>
+                        <li>✅ Долгосрочная поддержка</li>
+                    </ul>
+                    <div class="price">от 100 000 ₽</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ВИДЕО ===== -->
+        <section class="section" id="demo">
+            <h2 class="section-title">🎬 Как работает бот</h2>
+            <p class="section-sub">Видео-демонстрация полного цикла заказа</p>
+
+            <div class="video-wrapper">
+                <video controls poster="images/poster.jpg">
+                    <source src="video/demo.mp4" type="video/mp4">
+                    <source src="video/demo.webm" type="video/webm">
+                    Ваш браузер не поддерживает видео.
+                </video>
+            </div>
+            <p class="video-caption">📱 Полный цикл: от команды /start до подтверждения заказа</p>
+        </section>
+
+        <!-- ===== СКРИНШОТЫ ===== -->
+        <section class="section">
+            <h2 class="section-title">📸 Скриншоты</h2>
+            <p class="section-sub">Как выглядит бот в Telegram</p>
+
+            <div class="screenshots-grid">
+                <img src="images/screenshot1.png" alt="Главное меню" loading="lazy">
+                <img src="images/screenshot2.png" alt="Выбор улицы" loading="lazy">
+                <img src="images/screenshot3.png" alt="Выбор даты и времени" loading="lazy">
+                <img src="images/screenshot4.png" alt="Подтверждение заказа" loading="lazy">
+            </div>
+        </section>
+
+        <!-- ===== КОНТАКТЫ ===== -->
+        <section class="section">
+            <div class="contact-box">
+                <h2>📩 Готов начать?</h2>
+                <p>Напиши мне в Telegram — обсудим твой проект и я сделаю расчёт</p>
+                <a href="https://t.me/eduardburin" class="btn btn-primary" style="font-size: 18px; padding: 16px 48px;">
+                    💬 Написать в Telegram
+                </a>
+            </div>
+        </section>
+
+        <!-- ===== ПОДВАЛ ===== -->
+        <footer>
+            <p>© 2026 Эдуард — Разработка Telegram-ботов</p>
+            <div class="footer-links">
+                <a href="https://t.me/eduardburin" target="_blank">📱 Telegram</a>
+                <a href="https://chistobot-bot.onrender.com" target="_blank">🤖 Демо-бот</a>
+                <a href="mailto:your@email.com">📧 Email</a>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
