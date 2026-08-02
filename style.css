@@ -141,6 +141,51 @@ body {
     margin-top: 12px;
 }
 
+/* --- СТИЛИ ДЛЯ ШАГОВ (восстановлено!) --- */
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.step-card {
+    background: #141418;
+    padding: 32px 20px;
+    border-radius: 20px;
+    border: 1px solid #222;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.step-card:hover {
+    border-color: #7b2ffc;
+    transform: translateY(-5px);
+}
+
+.step-card .num {
+    display: inline-block;
+    background: #7b2ffc;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.step-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #aaa;
+    font-size: 15px;
+}
+
 /* --- Карточки проектов --- */
 .cards-grid {
     display: grid;
