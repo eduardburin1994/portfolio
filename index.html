@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Портфолио разработчика Telegram-ботов | Эдуард</title>
+    <title>Создание Telegram-ботов для бизнеса | Эдуард</title>
     <style>
         /* ===== ОБНУЛЕНИЕ ===== */
         * {
@@ -29,7 +29,7 @@
         /* ===== ШАПКА ===== */
         header {
             text-align: center;
-            padding: 70px 0 50px;
+            padding: 80px 0 60px;
         }
 
         header .badge {
@@ -123,7 +123,52 @@
             margin-bottom: 40px;
         }
 
-        /* ===== ПРОЕКТЫ (СЕТКА) ===== */
+        /* ===== КАК РАБОТАЕТ (3 ШАГА) ===== */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .step-card {
+            background: #141418;
+            padding: 32px 20px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: #7b2ffc;
+            transform: translateY(-5px);
+        }
+
+        .step-card .num {
+            display: inline-block;
+            background: #7b2ffc;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .step-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .step-card p {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* ===== ПРОЕКТЫ ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -216,6 +261,97 @@
             transform: translateY(-2px);
         }
 
+        /* ===== ЦЕНЫ ===== */
+        .prices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .price-card {
+            background: #141418;
+            padding: 30px 20px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            text-align: center;
+            transition: 0.3s ease;
+        }
+
+        .price-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-5px);
+        }
+
+        .price-card .price {
+            font-size: 36px;
+            font-weight: 700;
+            color: #00d4ff;
+            margin: 10px 0;
+        }
+
+        .price-card .price small {
+            font-size: 16px;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .price-card ul {
+            list-style: none;
+            text-align: left;
+            margin: 16px 0 20px;
+            padding: 0 10px;
+        }
+
+        .price-card ul li {
+            padding: 6px 0;
+            color: #bbb;
+            font-size: 14px;
+            border-bottom: 1px solid #1e1e22;
+        }
+
+        .price-card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-item {
+            background: #141418;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: #7b2ffc;
+        }
+
+        .faq-item h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .faq-item p {
+            color: #aaa;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .faq-item .answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.open .answer {
+            max-height: 200px;
+            padding-top: 10px;
+        }
+
         /* ===== КОНТАКТЫ ===== */
         .contact-box {
             background: linear-gradient(135deg, #141418, #1a0a2e);
@@ -286,7 +422,9 @@
                 font-size: 26px;
             }
 
-            .projects-grid {
+            .projects-grid,
+            .prices-grid,
+            .steps-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -309,13 +447,39 @@
 
         <!-- ===== ШАПКА ===== -->
         <header>
-            <div class="badge">🚀 Разработка Telegram-ботов и веб-приложений</div>
+            <div class="badge">🚀 Разработка Telegram-ботов под ключ</div>
             <h1>Автоматизируй бизнес<br>с умным ботом</h1>
-            <p>Приём заказов, админ-панель, база данных — всё в одном решении</p>
+            <p>Приём заказов 24/7, админ-панель, база данных и уведомления — всё в одном Telegram-боте</p>
             <div class="btn-group">
                 <a href="https://t.me/eduardburin" class="btn btn-primary">💬 Связаться со мной</a>
             </div>
         </header>
+
+        <!-- ===== КАК ЭТО РАБОТАЕТ ===== -->
+        <section class="section">
+            <h2 class="section-title">Как это работает</h2>
+            <p class="section-sub">Всего 3 шага, и ваш бизнес автоматизирован</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="num">1</div>
+                    <h3>📝 Обсуждаем задачу</h3>
+                    <p>Вы рассказываете, какой функционал нужен вашему бизнесу. Я предлагаю решение и сроки.</p>
+                </div>
+                <div class="step-card">
+                    <div class="num">2</div>
+                    <h3>🤖 Создаём бота</h3>
+                    <p>Я пишу код, подключаю базу данных и настраиваю админ-панель. Вы получаете готового бота для
+                        тестирования.</p>
+                </div>
+                <div class="step-card">
+                    <div class="num">3</div>
+                    <h3>🚀 Запуск и поддержка</h3>
+                    <p>Бот работает 24/7. Вы получаете доступ к админке и инструкцию. Я всегда на связи для доработок.
+                    </p>
+                </div>
+            </div>
+        </section>
 
         <!-- ===== ПРОЕКТЫ ===== -->
         <section class="section">
@@ -328,7 +492,8 @@
                 <div class="project-card">
                     <span class="emoji">🧹</span>
                     <h3>ChistoBot</h3>
-                    <p>Полноценный сервис по выносу мусора с Telegram-ботом и веб-сайтом.</p>
+                    <p>Полноценный сервис по выносу мусора с Telegram-ботом и веб-сайтом. Клиенты оставляют заказы,
+                        администраторы видят их в панели управления.</p>
                     <div class="tags">
                         <span>Python</span>
                         <span>Flask</span>
@@ -345,7 +510,8 @@
                 <div class="project-card">
                     <span class="emoji">🦷</span>
                     <h3>DemoDentBot</h3>
-                    <p>Демо-версия бота для стоматологической клиники с записью к врачам и хранением данных в БД.</p>
+                    <p>Демо-версия бота для стоматологической клиники. Пациенты выбирают врача, дату и время. Все записи
+                        сохраняются в базу данных.</p>
                     <div class="tags">
                         <span>Python</span>
                         <span>Flask</span>
@@ -361,7 +527,7 @@
                 <div class="project-card">
                     <span class="emoji">💼</span>
                     <h3>Сайт-портфолио</h3>
-                    <p>Этот сайт — моя визитка. На нём собраны все мои проекты и контакты.</p>
+                    <p>Этот сайт — моя визитка. На нём собраны все мои проекты и контакты для связи.</p>
                     <div class="tags">
                         <span>HTML/CSS</span>
                         <span>Render</span>
@@ -372,6 +538,79 @@
                     </div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- ===== ЦЕНЫ ===== -->
+        <section class="section">
+            <h2 class="section-title">💰 Стоимость</h2>
+            <p class="section-sub">Прозрачные цены без скрытых платежей</p>
+
+            <div class="prices-grid">
+                <div class="price-card">
+                    <h3>🤖 Бот под ключ</h3>
+                    <div class="price">от 30 000 <small>₽</small></div>
+                    <ul>
+                        <li>✅ Приём заказов 24/7</li>
+                        <li>✅ Уведомления администратору</li>
+                        <li>✅ База данных SQLite</li>
+                        <li>✅ Простая админ-панель</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>⚡ Бизнес-бот</h3>
+                    <div class="price">от 70 000 <small>₽</small></div>
+                    <ul>
+                        <li>✅ Всё из базового тарифа</li>
+                        <li>✅ Статистика и графики</li>
+                        <li>✅ Рассылки клиентам</li>
+                        <li>✅ Интеграция с CRM</li>
+                    </ul>
+                </div>
+                <div class="price-card">
+                    <h3>👑 Индивидуальный</h3>
+                    <div class="price">от 100 000 <small>₽</small></div>
+                    <ul>
+                        <li>✅ Любая сложность и логика</li>
+                        <li>✅ Интеграции со сторонними API</li>
+                        <li>✅ Долгосрочная поддержка</li>
+                        <li>✅ Индивидуальный дизайн</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section">
+            <h2 class="section-title">❓ Часто задаваемые вопросы</h2>
+            <p class="section-sub">Ответы на самые популярные вопросы клиентов</p>
+
+            <div class="faq-item open">
+                <h4>Сколько времени занимает разработка бота?</h4>
+                <div class="answer">
+                    <p>В среднем от 3 до 10 дней, в зависимости от сложности. Простого бота можно сделать за 3 дня.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h4>Нужно ли мне платить за хостинг?</h4>
+                <div class="answer">
+                    <p>Нет. Бесплатный хостинг на Render входит в стоимость проекта. Если вам нужен более мощный сервер,
+                        я помогу с настройкой.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h4>Что если я захочу изменить функционал бота?</h4>
+                <div class="answer">
+                    <p>В течение 1 месяца после сдачи проекта я бесплатно исправляю ошибки. Любые новые доработки
+                        обсуждаются отдельно.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <h4>Я не разбираюсь в технике. Смогу ли я управлять ботом?</h4>
+                <div class="answer">
+                    <p>Да. В админ-панели всё устроено максимально просто: вы видите заказы, меняете цены и управляете
+                        клиентами. Всё интуитивно понятно.</p>
+                </div>
             </div>
         </section>
 
@@ -397,6 +636,15 @@
         </footer>
 
     </div>
+
+    <!-- ===== СКРИПТ ДЛЯ FAQ ===== -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+    </script>
 
 </body>
 
