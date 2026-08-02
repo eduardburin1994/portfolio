@@ -4,15 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | Эдуард</title>
+    <title>Разработка Telegram-ботов | Эдуард</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Добавляем иконку для вкладки браузера -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
 </head>
 
 <body>
 
+    <!-- ===== НАВИГАЦИЯ ===== -->
     <nav class="navbar">
         <div class="container">
-            <div class="logo">Эдуард</div>
+            <div class="logo">Эдуард <span style="color: #888; font-size: 14px; font-weight: 400;">| Разработчик</span>
+            </div>
             <div class="menu">
                 <a href="index.html" class="active">Главная</a>
                 <a href="chistobot.html">ChistoBot</a>
@@ -22,53 +28,170 @@
         </div>
     </nav>
 
+    <!-- ===== ГЛАВНАЯ ===== -->
     <div class="container">
-        <header style="text-align:center; padding: 60px 0;">
+        <header style="text-align:center; padding: 80px 0 40px;">
             <h1
-                style="font-size: 48px; background: linear-gradient(135deg,#00d4ff,#7b2ffc); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
-                Разработка Telegram-ботов</h1>
-            <p style="font-size: 18px; color: #888; max-width: 500px; margin: 10px auto;">Автоматизация бизнеса,
-                админ-панели и базы данных</p>
+                style="font-size: 48px; font-weight: 800; background: linear-gradient(135deg,#00d4ff,#7b2ffc); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+                Автоматизируй бизнес<br>с умным Telegram-ботом
+            </h1>
+            <p style="font-size: 18px; color: #888; max-width: 600px; margin: 15px auto;">
+                Создаю ботов, которые принимают заказы 24/7, ведут базу клиентов и отправляют уведомления.
+            </p>
+            <div style="margin-top: 20px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary">💬 Заказать разработку</a>
+                <a href="#tech" class="btn btn-secondary"
+                    style="border:2px solid #444; padding: 12px 32px; border-radius:40px; color:#fff; text-decoration:none;">Технологии</a>
+            </div>
         </header>
 
+        <!-- ===== ТЕХНОЛОГИИ (для программистов) ===== -->
+        <section class="section" id="tech" style="border-top: none;">
+            <h2 class="section-title">🛠 Стек технологий</h2>
+            <p class="section-sub">На чём я пишу ботов</p>
+            <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                <span
+                    style="background: #1e1e22; padding: 8px 20px; border-radius: 30px; border: 1px solid #2a2a2e;">Python
+                    3</span>
+                <span
+                    style="background: #1e1e22; padding: 8px 20px; border-radius: 30px; border: 1px solid #2a2a2e;">Flask</span>
+                <span
+                    style="background: #1e1e22; padding: 8px 20px; border-radius: 30px; border: 1px solid #2a2a2e;">SQLite</span>
+                <span
+                    style="background: #1e1e22; padding: 8px 20px; border-radius: 30px; border: 1px solid #2a2a2e;">Telegram
+                    Bot API</span>
+                <span
+                    style="background: #1e1e22; padding: 8px 20px; border-radius: 30px; border: 1px solid #2a2a2e;">HTML
+                    / CSS</span>
+            </div>
+        </section>
+
+        <!-- ===== ЧТО ВХОДИТ В РАЗРАБОТКУ ===== -->
         <section class="section">
-            <h2 class="section-title">Мои проекты</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>🧹 ChistoBot</h3>
-                    <p>Сервис по выносу мусора с ботам и сайтом.</p>
-                    <a href="chistobot.html" class="btn btn-primary">Смотреть</a>
+            <h2 class="section-title">📦 Что входит в разработку</h2>
+            <p class="section-sub">Полный цикл создания коммерческого бота</p>
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 20px;">
+                <div class="card" style="text-align: left;">
+                    <h3>🤖 Бот</h3>
+                    <p>Интерфейс для клиентов в Telegram: кнопки, меню, сбор заказов.</p>
                 </div>
-                <div class="card">
-                    <h3>🦷 DemoDentBot</h3>
-                    <p>Запись к стоматологу с выбором врача.</p>
-                    <a href="dentbot.html" class="btn btn-primary">Смотреть</a>
+                <div class="card" style="text-align: left;">
+                    <h3>📊 Админ-панель</h3>
+                    <p>Управление заказами, клиентами и ценами через простой веб-сайт.</p>
+                </div>
+                <div class="card" style="text-align: left;">
+                    <h3>📁 База данных</h3>
+                    <p>Хранение истории заказов, контактов клиентов и настроек.</p>
+                </div>
+                <div class="card" style="text-align: left;">
+                    <h3>📱 Уведомления</h3>
+                    <p>Автоматические оповещения администратора о новых заказах.</p>
                 </div>
             </div>
         </section>
 
+        <!-- ===== ПОЧЕМУ ТАКАЯ ЦЕНА ===== -->
         <section class="section">
-            <h2 class="section-title">💰 Цены</h2>
+            <h2 class="section-title">💰 Почему такая цена</h2>
+            <p class="section-sub">Прозрачный расчет стоимости</p>
+            <div
+                style="background: #141418; border-radius: 20px; padding: 30px; border: 1px solid #222; max-width: 800px; margin: 0 auto;">
+                <p style="color: #aaa; font-size: 15px; line-height: 1.8;">
+                    <b style="color: #fff;">30 000 ₽</b> — это не просто «написать код». Это стоимость <b>готового
+                        бизнес-инструмента</b>.
+                </p>
+                <ul style="list-style: none; margin-top: 15px; color: #bbb;">
+                    <li>✅ Проектирование архитектуры и базы данных.</li>
+                    <li>✅ Написание кода (Python, Flask, SQLite).</li>
+                    <li>✅ Настройка админ-панели для управления заказами.</li>
+                    <li>✅ Развертывание на бесплатном хостинге (Render/BeGet).</li>
+                    <li>✅ 1 месяц бесплатной поддержки и исправления ошибок.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== ЦЕНЫ ===== -->
+        <section class="section">
+            <h2 class="section-title">💰 Стоимость разработки</h2>
+            <p class="section-sub">Индивидуальный подход к каждому проекту</p>
             <div class="prices-grid">
                 <div class="price-card">
-                    <h3>Бот под ключ</h3>
+                    <h3>🤖 Бот под ключ</h3>
                     <div class="price">от 30 000 ₽</div>
+                    <ul>
+                        <li>✅ Приём заказов 24/7</li>
+                        <li>✅ Уведомления администратору</li>
+                        <li>✅ База данных SQLite</li>
+                        <li>✅ Простая админ-панель</li>
+                    </ul>
                 </div>
                 <div class="price-card">
-                    <h3>Бизнес-бот</h3>
+                    <h3>⚡ Бизнес-бот</h3>
                     <div class="price">от 70 000 ₽</div>
+                    <ul>
+                        <li>✅ Всё из базового тарифа</li>
+                        <li>✅ Статистика и графики</li>
+                        <li>✅ Рассылки клиентам</li>
+                        <li>✅ Интеграция с CRM</li>
+                    </ul>
                 </div>
             </div>
         </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section">
+            <h2 class="section-title">❓ Часто задаваемые вопросы</h2>
+            <p class="section-sub">Ответы на самые популярные вопросы клиентов</p>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item open">
+                    <h4>Сколько времени занимает разработка бота?</h4>
+                    <div class="answer">
+                        <p>В среднем от 5 до 14 дней, в зависимости от сложности.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h4>Нужно ли мне платить за хостинг?</h4>
+                    <div class="answer">
+                        <p>Нет. Бесплатный хостинг входит в стоимость проекта.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h4>Я не разбираюсь в технике. Смогу ли я управлять ботом?</h4>
+                    <div class="answer">
+                        <p>Да. Админ-панель сделана максимально простой и понятной.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h4>Что если мне понадобятся доработки после сдачи?</h4>
+                    <div class="answer">
+                        <p>В течение 1 месяца я бесплатно исправляю ошибки. Новый функционал обсуждается отдельно.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </div>
 
+    <!-- ===== ПОДВАЛ ===== -->
     <footer>
-        <p>© 2026 Эдуард</p>
+        <p>© 2026 Эдуард — Разработка Telegram-ботов</p>
         <div class="footer-links">
-            <a href="https://t.me/eduardburin">Telegram</a>
-            <a href="https://www.fl.ru/users/eduardburin/portfolio/">FL.ru</a>
+            <a href="https://t.me/eduardburin" target="_blank">📱 Telegram</a>
+            <a href="https://vk.com/eduardburin" target="_blank">📍 ВКонтакте</a>
+            <a href="https://www.fl.ru/users/eduardburin/portfolio/" target="_blank">📄 FL.ru</a>
         </div>
     </footer>
+
+    <!-- ===== СКРИПТ ДЛЯ FAQ ===== -->
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+        });
+    </script>
 </body>
 
 </html>
