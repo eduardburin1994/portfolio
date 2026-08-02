@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DemoDentBot | Эдуард</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Специально для этой страницы: чуть более крупные скриншоты */
-        .gallery-grid {
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
-    </style>
 </head>
 
 <body>
@@ -57,23 +51,31 @@
                 </div>
             </div>
 
-            <!-- ГАЛЕРЕЯ СКРИНШОТОВ -->
-            <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 20px;">📸 Как это выглядит в
-                работе</h2>
-            <div class="gallery-grid" id="gallery">
-                <!-- К каждой картинке добавлен атрибут onclick для открытия лайтбокса -->
-                <img src="images/screen1.png" alt="screen1" onclick="openLightbox(this)">
-                <img src="images/screen2.png" alt="screen2" onclick="openLightbox(this)">
-                <img src="images/screen3.png" alt="screen3" onclick="openLightbox(this)">
-                <img src="images/screen4.png" alt="screen4" onclick="openLightbox(this)">
+            <!-- БЛОК СКРИНШОТОВ -->
+            <div style="margin-top: 60px;">
+                <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 20px;">📸 Скриншоты работы
+                </h2>
+                <div class="gallery-grid" id="gallery">
+                    <img src="images/screen1.png" alt="screen1" onclick="openLightbox(this)">
+                    <img src="images/screen2.png" alt="screen2" onclick="openLightbox(this)">
+                    <img src="images/screen3.png" alt="screen3" onclick="openLightbox(this)">
+                    <img src="images/screen4.png" alt="screen4" onclick="openLightbox(this)">
+                </div>
             </div>
 
-            <!-- ВИДЕО -->
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video/demo2.mp4" type="video/mp4">
-                </video>
+            <!-- БЛОК ВИДЕО -->
+            <div style="margin-top: 60px; border-top: 1px solid #222; padding-top: 40px;">
+                <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 10px;">🎬 Видео-демонстрация
+                </h2>
+                <p style="text-align: center; color: #888; font-size: 15px; margin-bottom: 30px;">Посмотрите полный цикл
+                    записи пациента к врачу</p>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="video/demo2.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
+
         </section>
     </div>
 

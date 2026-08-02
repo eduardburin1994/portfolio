@@ -68,24 +68,106 @@
                 </div>
             </div>
 
-            <!-- ГАЛЕРЕЯ СКРИНШОТОВ -->
-            <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 20px;">📸 Как это выглядит в
-                работе</h2>
-            <div class="gallery-grid">
-                <img src="images/screenshot1.png" alt="screenshot1">
-                <img src="images/screenshot2.png" alt="screenshot2">
-                <img src="images/screenshot3.png" alt="screenshot3">
-                <img src="images/screenshot4.png" alt="screenshot4">
+            <!-- БЛОК СКРИНШОТОВ -->
+            <div style="margin-top: 60px;">
+                <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 20px;">📸 Скриншоты работы
+                </h2>
+                <div class="gallery-grid" id="gallery">
+                    <img src="images/screenshot1.png" alt="screenshot1" onclick="openLightbox(this)">
+                    <img src="images/screenshot2.png" alt="screenshot2" onclick="openLightbox(this)">
+                    <img src="images/screenshot3.png" alt="screenshot3" onclick="openLightbox(this)">
+                    <img src="images/screenshot4.png" alt="screenshot4" onclick="openLightbox(this)">
+                </div>
             </div>
 
-            <!-- ВИДЕО -->
-            <div class="video-wrapper">
-                <video controls>
-                    <source src="video/demo.mp4" type="video/mp4">
-                </video>
+            <!-- БЛОК ВИДЕО -->
+            <div style="margin-top: 60px; border-top: 1px solid #222; padding-top: 40px;">
+                <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 10px;">🎬 Видео-демонстрация
+                </h2>
+                <p style="text-align: center; color: #888; font-size: 15px; margin-bottom: 30px;">Посмотрите полный цикл
+                    работы бота от заказа до подтверждения</p>
+                <div class="video-wrapper">
+                    <video controls>
+                        <source src="video/demo.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
+
         </section>
     </div>
+
+    <!-- ===== ЛАЙТБОКС (ОТКРЫТИЕ КАРТИНОК В ПОЛНЫЙ ЭКРАН) ===== -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <style>
+        /* Стили для лайтбокса */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 16px;
+            box-shadow: 0 0 60px rgba(123, 47, 252, 0.2);
+        }
+
+        .lightbox .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .lightbox .close:hover {
+            color: #a855f7;
+            transform: rotate(90deg);
+        }
+    </style>
+
+    <script>
+        // Функция для открытия лайтбокса
+        function openLightbox(element) {
+            document.getElementById('lightbox-img').src = element.src;
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden'; // Блокируем прокрутку страницы
+        }
+
+        // Функция для закрытия лайтбокса
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Возвращаем прокрутку
+        }
+
+        // Закрытие по клавише ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
     <footer>
         <p>© 2026 Эдуард</p>
     </footer>
