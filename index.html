@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Разработка Telegram-ботов | Эдуард</title>
+    <title>Портфолио разработчика Telegram-ботов | Эдуард</title>
     <style>
         /* ===== ОБНУЛЕНИЕ ===== */
         * {
@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px 24px;
         }
@@ -123,113 +123,97 @@
             margin-bottom: 40px;
         }
 
-        /* ===== КАРТОЧКИ УСЛУГ ===== */
-        .grid-3 {
+        /* ===== ПРОЕКТЫ (СЕТКА) ===== */
+        .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
         }
 
-        .card {
+        .project-card {
             background: #141418;
-            padding: 32px 24px;
-            border-radius: 20px;
+            border-radius: 24px;
             border: 1px solid #222;
+            padding: 32px 24px;
             transition: 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover {
+        .project-card:hover {
             border-color: #7b2ffc;
-            transform: translateY(-6px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
         }
 
-        .card .emoji {
-            font-size: 40px;
+        .project-card .emoji {
+            font-size: 48px;
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
-        .card h3 {
-            font-size: 22px;
+        .project-card h3 {
+            font-size: 24px;
             margin-bottom: 10px;
             color: #fff;
         }
 
-        .card p {
+        .project-card p {
             color: #aaa;
             font-size: 15px;
+            line-height: 1.5;
         }
 
-        .card ul {
-            list-style: none;
-            margin-top: 14px;
+        .project-card .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 12px 0 20px;
         }
 
-        .card ul li {
-            padding: 6px 0;
-            color: #bbb;
-            font-size: 14px;
-            border-bottom: 1px solid #1e1e22;
-        }
-
-        .card ul li:last-child {
-            border-bottom: none;
-        }
-
-        .price {
-            font-size: 28px;
-            font-weight: 700;
-            color: #00d4ff;
-            margin: 16px 0 6px;
-        }
-
-        .price small {
-            font-size: 15px;
-            font-weight: 400;
-            color: #888;
-        }
-
-        /* ===== СКРИНШОТЫ ===== */
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-        }
-
-        .screenshots-grid img {
-            width: 100%;
-            border-radius: 16px;
-            border: 1px solid #2a2a2e;
-            transition: 0.3s ease;
-            cursor: pointer;
-        }
-
-        .screenshots-grid img:hover {
-            transform: scale(1.02);
-            border-color: #7b2ffc;
-        }
-
-        /* ===== ВИДЕО ===== */
-        .video-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
+        .project-card .tags span {
+            background: #1e1e22;
+            padding: 4px 12px;
             border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #2a2a2e;
-            background: #000;
-        }
-
-        .video-wrapper video {
-            width: 100%;
-            display: block;
-        }
-
-        .video-caption {
-            text-align: center;
+            font-size: 12px;
             color: #888;
+            border: 1px solid #2a2a2e;
+        }
+
+        .project-card .card-links {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            flex-wrap: wrap;
+        }
+
+        .project-card .card-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 14px;
-            margin-top: 12px;
+            transition: 0.3s ease;
+            border: 1px solid #7b2ffc;
+            color: #a855f7;
+        }
+
+        .project-card .card-links a:hover {
+            background: #7b2ffc;
+            color: #fff;
+        }
+
+        .project-card .card-links a.primary {
+            background: #7b2ffc;
+            color: #fff;
+            border: none;
+        }
+
+        .project-card .card-links a.primary:hover {
+            background: #a855f7;
+            transform: translateY(-2px);
         }
 
         /* ===== КОНТАКТЫ ===== */
@@ -302,12 +286,8 @@
                 font-size: 26px;
             }
 
-            .grid-3 {
+            .projects-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .screenshots-grid {
-                grid-template-columns: 1fr 1fr;
             }
 
             .btn-group {
@@ -320,16 +300,6 @@
                 text-align: center;
             }
         }
-
-        @media (max-width: 480px) {
-            .screenshots-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-box {
-                padding: 30px 16px;
-            }
-        }
     </style>
 </head>
 
@@ -339,92 +309,77 @@
 
         <!-- ===== ШАПКА ===== -->
         <header>
-            <div class="badge">🚀 Разработка Telegram-ботов</div>
+            <div class="badge">🚀 Разработка Telegram-ботов и веб-приложений</div>
             <h1>Автоматизируй бизнес<br>с умным ботом</h1>
-            <p>Приём заказов, уведомления, админ-панель — всё в одном Telegram-боте</p>
+            <p>Приём заказов, админ-панель, база данных — всё в одном решении</p>
             <div class="btn-group">
                 <a href="https://t.me/eduardburin" class="btn btn-primary">💬 Связаться со мной</a>
-                <a href="#demo" class="btn btn-secondary">🎬 Смотреть демо</a>
             </div>
         </header>
 
-        <!-- ===== УСЛУГИ ===== -->
+        <!-- ===== ПРОЕКТЫ ===== -->
         <section class="section">
-            <h2 class="section-title">Что я делаю</h2>
-            <p class="section-sub">Готовые решения для вашего бизнеса</p>
+            <h2 class="section-title">🚀 Мои проекты</h2>
+            <p class="section-sub">Работающие решения, которые вы можете протестировать прямо сейчас</p>
 
-            <div class="grid-3">
-                <div class="card">
-                    <span class="emoji">🤖</span>
-                    <h3>Бот под ключ</h3>
-                    <p>Полноценный бот с приёмом заказов, базой данных и уведомлениями</p>
-                    <ul>
-                        <li>✅ Приём заказов 24/7</li>
-                        <li>✅ Уведомления админу</li>
-                        <li>✅ Готовая админ-панель</li>
-                    </ul>
-                    <div class="price">от 30 000 ₽</div>
+            <div class="projects-grid">
+
+                <!-- ПРОЕКТ 1: ChistoBot -->
+                <div class="project-card">
+                    <span class="emoji">🧹</span>
+                    <h3>ChistoBot</h3>
+                    <p>Полноценный сервис по выносу мусора с Telegram-ботом и веб-сайтом.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                        <span>Telegram API</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://t.me/chistobot_tver_bot" target="_blank" class="primary">🤖 Бот</a>
+                        <a href="https://chistobot-site-btt9.onrender.com" target="_blank">🌐 Сайт</a>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <span class="emoji">⚡</span>
-                    <h3>Бизнес-бот</h3>
-                    <p>Расширенная версия с аналитикой, рассылками и интеграциями</p>
-                    <ul>
-                        <li>✅ Статистика и графики</li>
-                        <li>✅ Рассылки клиентам</li>
-                        <li>✅ Интеграция с CRM</li>
-                    </ul>
-                    <div class="price">от 70 000 ₽</div>
+                <!-- ПРОЕКТ 2: DemoDentBot -->
+                <div class="project-card">
+                    <span class="emoji">🦷</span>
+                    <h3>DemoDentBot</h3>
+                    <p>Демо-версия бота для стоматологической клиники с записью к врачам и хранением данных в БД.</p>
+                    <div class="tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                        <span>Webhook</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://t.me/demo_dent_robot" target="_blank" class="primary">🦷 Бот</a>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <span class="emoji">👑</span>
-                    <h3>Индивидуальный</h3>
-                    <p>Всё, что нужно именно вам — любая логика и интеграции</p>
-                    <ul>
-                        <li>✅ Любая сложность</li>
-                        <li>✅ Интеграции с API</li>
-                        <li>✅ Долгосрочная поддержка</li>
-                    </ul>
-                    <div class="price">от 100 000 ₽</div>
+                <!-- ПРОЕКТ 3: Сайт-портфолио -->
+                <div class="project-card">
+                    <span class="emoji">💼</span>
+                    <h3>Сайт-портфолио</h3>
+                    <p>Этот сайт — моя визитка. На нём собраны все мои проекты и контакты.</p>
+                    <div class="tags">
+                        <span>HTML/CSS</span>
+                        <span>Render</span>
+                        <span>UptimeRobot</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://portfolio-w3ee.onrender.com" target="_blank" class="primary">🌐 Открыть</a>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- ===== ВИДЕО ===== -->
-        <section class="section" id="demo">
-            <h2 class="section-title">🎬 Как работает бот</h2>
-            <p class="section-sub">Видео-демонстрация полного цикла заказа</p>
-
-            <div class="video-wrapper">
-                <video controls poster="images/poster.jpg">
-                    <source src="video/demo.mp4" type="video/mp4">
-                    <source src="video/demo.webm" type="video/webm">
-                    Ваш браузер не поддерживает видео.
-                </video>
-            </div>
-            <p class="video-caption">📱 Полный цикл: от команды /start до подтверждения заказа</p>
-        </section>
-
-        <!-- ===== СКРИНШОТЫ ===== -->
-        <section class="section">
-            <h2 class="section-title">📸 Скриншоты</h2>
-            <p class="section-sub">Как выглядит бот в Telegram</p>
-
-            <div class="screenshots-grid">
-                <img src="images/screenshot1.png" alt="Главное меню" loading="lazy">
-                <img src="images/screenshot2.png" alt="Выбор улицы" loading="lazy">
-                <img src="images/screenshot3.png" alt="Выбор даты и времени" loading="lazy">
-                <img src="images/screenshot4.png" alt="Подтверждение заказа" loading="lazy">
             </div>
         </section>
 
         <!-- ===== КОНТАКТЫ ===== -->
         <section class="section">
             <div class="contact-box">
-                <h2>📩 Готов начать?</h2>
-                <p>Напиши мне в Telegram — обсудим твой проект и я сделаю расчёт</p>
+                <h2>📩 Готов начать проект?</h2>
+                <p>Напиши мне в Telegram — обсудим твою задачу и я сделаю расчёт</p>
                 <a href="https://t.me/eduardburin" class="btn btn-primary" style="font-size: 18px; padding: 16px 48px;">
                     💬 Написать в Telegram
                 </a>
@@ -436,8 +391,8 @@
             <p>© 2026 Эдуард — Разработка Telegram-ботов</p>
             <div class="footer-links">
                 <a href="https://t.me/eduardburin" target="_blank">📱 Telegram</a>
-                <a href="https://chistobot-bot.onrender.com" target="_blank">🤖 Демо-бот</a>
-                <a href="mailto:your@email.com">📧 Email</a>
+                <a href="https://chistobot-site-btt9.onrender.com" target="_blank">🧹 ChistoBot</a>
+                <a href="https://t.me/demo_dent_robot" target="_blank">🦷 DemoDentBot</a>
             </div>
         </footer>
 
