@@ -24,8 +24,36 @@
     <div class="container">
         <section class="section" style="border-top:none;">
             <h1 style="font-size: 36px; text-align: center; color: #fff;">🦷 DemoDentBot</h1>
-            <p style="text-align: center; color: #888; margin-bottom: 30px;">Запись к стоматологу с выбором врача</p>
+            <p style="text-align: center; color: #888; margin-bottom: 10px;">Демо-версия бота для стоматологической
+                клиники</p>
 
+            <!-- ОПИСАНИЕ ПРОЕКТА -->
+            <div
+                style="max-width: 800px; margin: 0 auto 40px; background: #141418; padding: 30px; border-radius: 20px; border: 1px solid #2a2a2e;">
+                <h3 style="color: #fff; margin-bottom: 15px;">Что умеет этот бот?</h3>
+                <p style="color: #aaa; font-size: 15px; line-height: 1.8;">
+                    <b>DemoDentBot</b> — это демонстрация того, как можно организовать запись пациентов к врачу через
+                    Telegram без сложных CRM-систем.
+                </p>
+                <p style="color: #aaa; font-size: 15px; line-height: 1.8; margin-top: 15px;">
+                    <b>Сценарий для пациента:</b>
+                    Пациент нажимает «Записаться» → выбирает врача (терапевт, ортодонт, хирург) → выбирает дату и время
+                    → вводит имя и телефон → получает подтверждение записи.
+                </p>
+                <p style="color: #aaa; font-size: 15px; line-height: 1.8; margin-top: 15px;">
+                    <b>Технически:</b>
+                    Бот работает на связке Python + Flask + Telegram Bot API. Все записи сохраняются в базу данных
+                    SQLite. Веб-хуки обеспечивают мгновенный отклик.
+                </p>
+                <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                    <a href="https://t.me/demo_dent_robot" target="_blank" class="btn btn-primary"
+                        style="font-size: 14px;">🦷 Перейти в бота</a>
+                </div>
+            </div>
+
+            <!-- ГАЛЕРЕЯ СКРИНШОТОВ -->
+            <h2 style="text-align: center; color: #fff; font-size: 24px; margin-bottom: 20px;">📸 Как это выглядит в
+                работе</h2>
             <div class="gallery-grid">
                 <img src="images/screen1.png" alt="screen1">
                 <img src="images/screen2.png" alt="screen2">
@@ -33,6 +61,7 @@
                 <img src="images/screen4.png" alt="screen4">
             </div>
 
+            <!-- ВИДЕО -->
             <div class="video-wrapper">
                 <video controls>
                     <source src="video/demo2.mp4" type="video/mp4">
